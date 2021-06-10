@@ -1,4 +1,3 @@
-
 // import function from local file
 import findShortestString from "./find-shortest-string";
 

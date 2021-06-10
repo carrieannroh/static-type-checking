@@ -1,18 +1,12 @@
-/**
- * Find the shortest string in an array.
- * In the case of a tie, returns the earlier string in the array.
- *
- * @param stringArr array of strings
- * @returns the shortest string
- */
-function findShortestString(stringArr: string[]): string {
-  let shortestString = stringArr[0];
-  for (const str of stringArr) {
-    if (str.length < shortestString.length) {
-      shortestString = str;
-    }
-  }
-  return shortestString;
-}
 
-export default findShortestString;
+// import function from local file
+import findShortestString from "./find-shortest-string";
+
+test("findShortestString finds the shortest string in an array", () => {
+  expect(findShortestString(["it", "is", "a", "nice", "day"])).toBe("a");
+  expect(findShortestString(["why", "hello", "to", "you"])).toBe("to");
+});
+
+test("findShortestString returns the earlier string in cases of joint shortest strings", () => {
+  expect(findShortestString(["brave", "dance"])).toBe("brave");
+});
